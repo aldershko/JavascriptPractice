@@ -3,37 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
+    <title>Document</title>
+    <link rel="stylesheet" href="validation.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    
+   
+    </script>
+    <!-- <script>
         $(document).ready(function(){
+
           $("button").click(function(){
-            const name = $("#name").val();
-            const email = $("#email").val();
-            if(name == ""){
-                alert("Please enter name");
-            }
-            else if(email == ""){
-                alert("Please enter email");
-            }
+            $(".name").text($("#name").val());
+            $(".email").text($("#email").val());
+            
           });
         });
-        </script>
-        <link rel="stylesheet" href="validation.css">
-    <title>Document</title>
+    </script> -->
 </head>
 <body>
     <div class="container">
-        <div class="hero">
-            <div class="form">
-                <input type="text" placeholder="Name" id="name">
-                <input type="email" placeholder="Enter the email" id="email">
-                <button id="btn">Submit</button>
+        
+            <div class="form-container">
+                <h2>Registration Form</h2>
+                <input type="text" class="input" id="firstName" placeholder="First Name" >
+                <span id="username">Username not valid</span>
+                <input type="text" class="input" id="lastName" placeholder="Last Name" >
+                <input type="email" class="input" id="email" placeholder="Email" >
+                <span id="userMail" class="invalid-feedback">Email not valid</span>
+                <input type="password" class="input" id="password" placeholder="Password" ><br>
+                <span id="passcheck">Please fill the password</span>
+                <input type="password" class="input" id="conpassword" placeholder="Confirm Password" ><br>
+                <span id="conpasscheck">Password does not match</span>
+                <span class="notification"></span>
+                <div class="margin gender-select">
+                    <label for="gender">Select Gender:</label>
+                    <select name="gender" id="gender">
+                        <option  value=""> -- select an option -- </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span id="gendercheck">Please select an option</span>
+                </div> 
+                <div class="margin checkbox">
+                    <input type="radio" id="unemp" value="umemployed" name="job">
+                    <label for="unemp">Unemployed</label>
+                    <input type="radio" id="emp" value="employed" name="job">
+                    <label for="unemp">Employed</label>
+                </div>
+                <button>Submit</button>
+                
             </div>
+        
+        <div class="result-container">
+            <h2>Welcome  <span id="name"> </span></h2>
+            <h2>Your mail address: <span id="mailAdd"> </span></h2>
+            <h2>You are of gender: <span id="man"> </span></h2>
+            <h2>You are: <span id="status"></span></h2>
         </div>
-        <div class="result">
-            <h2 class="name"></h2>
-            <h2 class="email"></h2>
-        </div>
+        
+        <script src="validaton.js"></script>
     </div>
+    
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            const name = $("#name").val();
+            const email = $("#email").val();
+            if(name == ""){
+                alert("Please enter name");
+            }
+            else if(email == ""){
+                alert("Please enter email");
+            }
+          });
+        });
+        </script>
+        <link rel="stylesheet" href="validation.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="form">
+                <input type="text" placeholder="Name" id="name">
+                <input type="email" placeholder="Enter the email" id="email">
+                <button id="btn">Submit</button>
+            </div>
+        </div>
+        <div class="result">
+            <h2 class="name"></h2>
+            <h2 class="email"></h2>
+        </div>
+    </div>
+</body>
+</html>

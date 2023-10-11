@@ -24,6 +24,7 @@ $(document).ready(function(){
             return false;
         } else {
             $("#username").hide();
+            usernameError = true;
         }
     }
 
@@ -71,6 +72,7 @@ $(document).ready(function(){
             return false;
         } else {
             $("#passcheck").hide();
+            passwordError = true;
         }
     }
 
@@ -90,13 +92,14 @@ $(document).ready(function(){
             return false;
         } else {
             $("#conpasscheck").hide();
+            confirmPasswordError = true;
         }
     }
 
     $("#gendercheck").hide();
     let selectOptionError  = true;
 
-    $("#gender").change(function(){
+    $("#gender").mouseleave(function(){
         validateOptionCheck();
     })
 
@@ -110,24 +113,28 @@ $(document).ready(function(){
         }
         else{
             $("#gendercheck").hide();
+            selectOptionError = true;
         }
     }
 
-    $("button").click(function () {
+    $("#submit").click(function () {
         validateUsername();
         validatePassword();
         validateConfirmPassword();
-        validateEmail();
+        // validateEmail();
+        validateOptionCheck();
+        console.log('clicked')
         if (
             usernameError == true &&
             passwordError == true &&
-            confirmPasswordError == true &&
-            emailError == true
-        ) {
-            return true;
-        } else {
-            return false;
-        }
-    });
+            confirmPasswordError == true 
+            && selectOptionError == true
+            ) {
+                
+                location.reload();
+            } else {
+                return false;
+            }
+        });
 
 })

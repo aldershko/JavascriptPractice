@@ -33,7 +33,7 @@ const saveData = () =>{
 }
 
 const showData = () =>{
-    localStorage.getItem("data");
+    listContainer.innerHTML = localStorage.getItem("data");
 }
 
 showData();

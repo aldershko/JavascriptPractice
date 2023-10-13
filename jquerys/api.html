@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline bg-purple-600">
+        Hello world!
+      </h1>
+
+      <div class=" min-h-screen bg-gray-100 flex items-center">
+  
+        <div class="w-full max-w-sm mx-auto">
+          <div class="bg-white shadow rounded-lg p-5 dark:bg-gray-800 w-full">
+                <h2 class="font-bold text-gray-800 text-lg dark:text-gray-400" "></h2>
+            
+                <template >
+                <div>
+                    <div class="flex mt-4 mb-2">
+                        <div class="flex-1">
+                            <div class="text-gray-600 text-sm dark:text-gray-400" ></div>
+                            <div class="text-3xl font-bold text-gray-800 dark:text-gray-300" "></div>
+                            <div  class="text-xs text-gray-600 dark:text-gray-400"></div>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="flex space-x-2 justify-between border-t dark:border-gray-500">
+                        <template  >
+                            <div class="flex-1 text-center pt-3" ">
+                                <!-- <div x-text="`${forecast.date.split('-')[2]}/${forecast.date.split('-')[1]}/${forecast.date.split('-')[0]}`" class="text-xs text-gray-500 dark:text-gray-400"></div> -->
+                                <img :src="`https:${forecast.day.condition.icon}`" :alt="forecast.day.condition.text" loading="lazy" class="mx-auto">
+                                <div x-html="`${forecast.day.maxtemp_c} &deg;C`" class="font-semibold text-gray-800 mt-1.5 dark:text-gray-300"></div>
+                                <div x-text="forecast.day.condition.text" class="text-xs text-gray-600 dark:text-gray-400"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                </template>
+        
+                <!-- <template x-if="weatherData == null">
+                <div class="animate-pulse">
+                    <div class="flex mt-4 mb-5">
+                        <div class="flex-1">
+                            <div class="rounded h-2 mb-1.5 bg-gray-200 w-1/2"></div>
+                            <div class="bg-gray-200 rounded h-4"></div>
+                            <div class="rounded h-2 mt-1.5 bg-gray-200 w-1/2"></div>
+                        </div>
+                        <div class="w-24">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 mx-auto"></div>
+                        </div>
+                    </div>
+        
+                    <div class="flex space-x-2 justify-between border-t h-32 dark:border-gray-500">
+                        <div class="flex-1 text-center pt-4 border-r px-5 dark:border-gray-500">
+                            <div class="rounded h-2 mb-2 bg-gray-200 w-1/2 mx-auto"></div>
+                            <div class="w-12 h-12 rounded-full bg-gray-100 mx-auto mb-2"></div>
+                            <div class="rounded h-3 mt-1 bg-gray-200 mt-1.5 mx-auto"></div>
+                            <div class="rounded h-2 mt-1 bg-gray-200 w-1/2 mx-auto"></div>
+                            
+                        </div>
+                        <div class="flex-1 text-center pt-4 px-5">
+                            <div class="rounded h-2 mb-2 bg-gray-200 w-1/2 mx-auto"></div>
+                            <div class="w-12 h-12 rounded-full bg-gray-100 mx-auto mb-2"></div>
+                            <div class="rounded h-3 mt-1 bg-gray-200 mt-1.5 mx-auto"></div>
+                            <div class="rounded h-2 mt-1 bg-gray-200 w-1/2 mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                </template> -->
+            
+        
+            </div>
+        </div>
+</body>
+</html>
